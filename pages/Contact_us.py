@@ -1,17 +1,20 @@
 import streamlit as st
-from send_email import send_mail
-st.header("Contact Me via Gmail")
+from send_email import send_email
 
-with st.form(key='email'):
-    user_email = st.text_input("Enter your Email")
-    raw_user_msg = st.text_area("Your Message")
-    user_msg = f"""\
-    Subject: New Message from {user_email}
-    
-    From: {user_email}
-    {raw_user_msg}
+st.header("Contact Us")
+
+with st.form(key="email_form"):
+    user_email = st.text_input("Enter your email address")
+    raw_message = st.text_area("Your Message")
+    message =f"""\
+    Subject: New email from {user_email}
+    From:{user_email}
+    {raw_message}
 """
     button = st.form_submit_button("Submit")
+    print(button)
     if button:
-        send_mail(user_msg)
-        st.info("Your email was send successfully")
+        send_email(message)
+        st.info("Your email was Sent we will get back to you shortly ")
+
+
