@@ -6,7 +6,7 @@ st.set_page_config(layout="wide")
 col1, col2 = st.columns(2)
 
 with col1:
-    st.image("images/" + "Ayush Trivedi photo.jpg", width=200)
+    st.image("images//Ayush_Trivedi_Photo.jpg", width=200)
 
 with col2:
     st.title("Ayush Trivedi")
